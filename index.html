@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz – Stempelbox</title>
+<meta name="description" content="Datenschutzerklärung der Android-App Stempelbox: digitale Stempelkarten, die vollständig offline auf dem Gerät arbeiten.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="stempelbox.png">
+<style>
+  :root {
+    --gelb:   #FFC94A;
+    --gruen:  #0D4F3F;
+    --orange: #FF6B2B;
+    --creme:  #FFF4E0;
+
+    --bg:      var(--creme);
+    --flaeche: #FFFFFF;
+    --text:    #1C1B1F;
+    --grau:    #5F5D5A;
+    --linie:   rgba(13, 79, 63, .14);
+    --akzent:  var(--gruen);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:      #14110D;
+      --flaeche: #1E1B16;
+      --text:    #F3EDE3;
+      --grau:    #B2ACA2;
+      --linie:   rgba(255, 201, 74, .20);
+      --akzent:  var(--gelb);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:      #14110D;
+    --flaeche: #1E1B16;
+    --text:    #F3EDE3;
+    --grau:    #B2ACA2;
+    --linie:   rgba(255, 201, 74, .20);
+    --akzent:  var(--gelb);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 64px; }
+
+  /* ---------- Kopf ---------- */
+  header { text-align: center; padding: 56px 0 32px; }
+
+  header img { width: 108px; height: 108px; display: block; margin: 0 auto 18px; }
+
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    line-height: 1.15;
+    margin: 0 0 8px;
+    letter-spacing: -.02em;
+    color: var(--akzent);
+  }
+
+  .untertitel { color: var(--grau); margin: 0; font-size: 1.05rem; }
+
+  /* ---------- Kernaussage ---------- */
+  .kern {
+    background: var(--gruen);
+    color: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin: 8px 0 40px;
+  }
+  .kern svg { flex: 0 0 auto; margin-top: 2px; }
+  .kern strong { display: block; font-size: 1.15rem; margin-bottom: 6px; }
+  .kern p { margin: 0; color: rgba(255,255,255,.9); font-size: .95rem; }
+
+  /* ---------- Inhaltsverzeichnis ---------- */
+  nav {
+    background: var(--flaeche);
+    border: 1px solid var(--linie);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  nav h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em;
+           color: var(--grau); margin: 0 0 12px; }
+  nav ol { margin: 0; padding-left: 20px; }
+  nav li { margin-bottom: 4px; }
+  nav a { color: var(--akzent); text-decoration: none; }
+  nav a:hover, nav a:focus-visible { text-decoration: underline; }
+
+  /* ---------- Abschnitte ---------- */
+  section { margin-bottom: 36px; scroll-margin-top: 20px; }
+
+  h2.titel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 0 12px;
+  }
+  .nr {
+    flex: 0 0 auto;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--gelb);
+    color: var(--gruen);
+    font-size: .85rem;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+  }
+  section p { margin: 0 0 12px; }
+
+  .hinweis {
+    border-left: 4px solid var(--orange);
+    background: var(--flaeche);
+    border-radius: 0 12px 12px 0;
+    padding: 16px 18px;
+    margin: 0 0 12px;
+  }
+  .hinweis p:last-child { margin-bottom: 0; }
+
+  .platzhalter {
+    border: 2px dashed var(--orange);
+    border-radius: 14px;
+    padding: 18px;
+    background: var(--flaeche);
+  }
+  .platzhalter p:last-child { margin-bottom: 0; }
+
+  dl { margin: 0; }
+  dt { font-weight: 700; margin-top: 12px; }
+  dd { margin: 2px 0 0; color: var(--grau); }
+
+  footer {
+    border-top: 1px solid var(--linie);
+    padding-top: 24px;
+    color: var(--grau);
+    font-size: .9rem;
+    text-align: center;
+  }
+
+  a { color: var(--akzent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="stempelbox.png" alt="Logo der App Stempelbox">
+    <h1>Datenschutz&shy;erklärung</h1>
+    <p class="untertitel">Für die Android-App <strong>Stempelbox</strong></p>
+  </header>
+
+  <div class="kern">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+         stroke="#FFC94A" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M2 2l20 20"/>
+      <path d="M8.5 16.5a5 5 0 0 1 7 0"/>
+      <path d="M5 12.86a10 10 0 0 1 5.17-2.69"/>
+      <path d="M16.72 11.06A10 10 0 0 1 19 12.86"/>
+      <path d="M2 8.82a15 15 0 0 1 4.17-2.65"/>
+      <path d="M10.66 5A15 15 0 0 1 22 8.82"/>
+      <line x1="12" y1="20" x2="12.01" y2="20"/>
+    </svg>
+    <div>
+      <strong>Deine Daten bleiben auf deinem Gerät.</strong>
+      <p>Kein Server, kein Konto, keine Werbung, kein Tracking. Die App selbst
+         baut keine Netzwerkverbindungen auf.</p>
+    </div>
+  </div>
+
+  <nav aria-label="Inhalt">
+    <h2>Inhalt</h2>
+    <ol>
+      <li><a href="#kurz">Kurz gesagt</a></li>
+      <li><a href="#daten">Welche Daten auf dem Gerät gespeichert werden</a></li>
+      <li><a href="#kamera">Kamera</a></li>
+      <li><a href="#qr">Was in den QR-Codes steht</a></li>
+      <li><a href="#backup">Sicherung und Export</a></li>
+      <li><a href="#kaeufe">Käufe über Google Play</a></li>
+      <li><a href="#geschaefte">Hinweis für Geschäfte</a></li>
+      <li><a href="#rechte">Deine Rechte und das Löschen</a></li>
+      <li><a href="#kinder">Kinder</a></li>
+      <li><a href="#verantwortlich">Verantwortlich</a></li>
+    </ol>
+  </nav>
+
+  <section id="kurz">
+    <h2 class="titel"><span class="nr">1</span> Kurz gesagt</h2>
+    <p>Stempelbox arbeitet vollständig auf deinem Gerät. Es gibt keinen Server
+       und keine Benutzerkonten, und die App selbst ruft keine Internetadressen
+       auf. Alle Funktionen – Stempeln, Signieren, Prüfen – laufen auch im
+       Flugmodus.</p>
+    <p>Wir erheben keine personenbezogenen Daten, erstellen keine Profile,
+       nutzen keine Analyse- oder Werbe-Dienste und geben nichts an Dritte
+       weiter.</p>
+  </section>
+
+  <section id="daten">
+    <h2 class="titel"><span class="nr">2</span> Welche Daten auf dem Gerät gespeichert werden</h2>
+    <dl>
+      <dt>Im Kundenmodus</dt>
+      <dd>Dein Name, eine zufällig erzeugte Kundennummer (UUID) sowie deine
+          Stempelkarten mit Zählerstand und dem Namen des jeweiligen Geschäfts.</dd>
+      <dt>Im Geschäftsmodus</dt>
+      <dd>Name des Geschäfts, die angelegten Stempelkarten sowie deine
+          Kundenliste mit Name, optionaler Telefonnummer und Stempelständen.</dd>
+      <dt>Technisch</dt>
+      <dd>Ein RSA-Schlüsselpaar zum Signieren der Stempel und der Hashwert
+          deiner PIN. Beides liegt im verschlüsselten Speicher des Systems
+          (Android Keystore). Die übrigen Daten liegen unverschlüsselt im
+          privaten App-Verzeichnis, auf das andere Apps nicht zugreifen können.</dd>
+    </dl>
+  </section>
+
+  <section id="kamera">
+    <h2 class="titel"><span class="nr">3</span> Kamera</h2>
+    <p>Die Kamera wird ausschließlich zum Lesen von QR-Codes benutzt. Die Bilder
+       werden direkt im Gerät ausgewertet, nicht gespeichert und nicht
+       übertragen.</p>
+    <p>Du kannst die Berechtigung verweigern: Für jeden Scan-Schritt gibt es
+       einen Weg ohne Kamera.</p>
+  </section>
+
+  <section id="qr">
+    <h2 class="titel"><span class="nr">4</span> Was in den QR-Codes steht</h2>
+    <div class="hinweis">
+      <p>Dein Kunden-QR-Code enthält deine Kundennummer und <strong>deinen
+         Namen</strong>. Wer ihn scannt, kann beides lesen – zeig ihn nur im
+         Geschäft. In den Einstellungen kannst du jederzeit einen anderen Namen
+         hinterlegen, etwa nur den Vornamen.</p>
+    </div>
+    <p>Der QR-Code des Geschäfts enthält Kartendaten, den neuen Zählerstand,
+       einen Zeitstempel sowie die Signatur und den öffentlichen Schlüssel des
+       Geschäfts. Zahlungsdaten sind nie enthalten.</p>
+  </section>
+
+  <section id="backup">
+    <h2 class="titel"><span class="nr">5</span> Sicherung und Export</h2>
+    <p>Beim Export erzeugt die App eine <code>.json</code>-Datei und übergibt sie
+       an die App, die du im Teilen-Menü auswählst. Erst dadurch verlassen Daten
+       dein Gerät – und zwar auf deine ausdrückliche Veranlassung.</p>
+    <div class="hinweis">
+      <p>Die Datei ist <strong>nicht verschlüsselt</strong> und enthält im
+         Geschäftsmodus auch Namen und Telefonnummern deiner Kunden. Bewahre sie
+         entsprechend sorgfältig auf. Der private Signaturschlüssel ist bewusst
+         nicht enthalten.</p>
+    </div>
+  </section>
+
+  <section id="kaeufe">
+    <h2 class="titel"><span class="nr">6</span> Käufe über Google Play</h2>
+    <p>Die einmaligen Freischaltungen laufen über Google Play Billing. Den
+       Zahlungsvorgang wickelt Google ab; wir erhalten weder deine Zahlungsdaten
+       noch deine Adresse.</p>
+    <p>In der App wird lediglich vermerkt, welches Produkt freigeschaltet ist.
+       Für die Verarbeitung durch Google gilt deren Datenschutzerklärung.</p>
+    <div class="hinweis">
+      <p>Offen gesagt: Die Play-Billing-Bibliothek bringt eine Google-Komponente
+         mit, die der App die Berechtigung <code>INTERNET</code> hinzufügt.
+         Unser eigener Code nutzt sie nicht. Sie steht deshalb in der
+         Berechtigungsliste, obwohl die App von sich aus nichts sendet.</p>
+    </div>
+  </section>
+
+  <section id="geschaefte">
+    <h2 class="titel"><span class="nr">7</span> Hinweis für Geschäfte</h2>
+    <p>Wenn du im Geschäftsmodus Namen und Telefonnummern deiner Kunden
+       speicherst, bist nach der DSGVO <strong>du</strong> dafür verantwortlich –
+       nicht der Anbieter dieser App.</p>
+    <p>Das heißt unter anderem: informiere deine Kunden, erhebe nur, was du
+       wirklich brauchst (die Telefonnummer ist optional), und lösche Daten, wenn
+       sie nicht mehr gebraucht werden. Einzelne Kunden kannst du über die
+       Kundenliste entfernen.</p>
+  </section>
+
+  <section id="rechte">
+    <h2 class="titel"><span class="nr">8</span> Deine Rechte und das Löschen</h2>
+    <p>Da keinerlei Daten beim Anbieter gespeichert werden, gibt es dort auch
+       nichts, worüber Auskunft erteilt werden könnte.</p>
+    <p>Alle Daten liegen bei dir: Über <em>Alle Daten löschen</em> in den
+       Einstellungen entfernst du sie vollständig, ebenso durch Deinstallieren
+       der App. Dieser Schritt lässt sich nicht rückgängig machen.</p>
+  </section>
+
+  <section id="kinder">
+    <h2 class="titel"><span class="nr">9</span> Kinder</h2>
+    <p>Die App richtet sich nicht gezielt an Kinder und erhebt keine Daten über
+       das hinaus, was du selbst eingibst.</p>
+  </section>
+
+  <section id="verantwortlich">
+    <h2 class="titel"><span class="nr">10</span> Verantwortlich</h2>
+    <div class="platzhalter">
+      <p><strong>Vor der Veröffentlichung ausfüllen.</strong> Google Play
+         verlangt eine erreichbare Kontaktmöglichkeit.</p>
+      <p>
+        Name / Firma<br>
+        Straße und Hausnummer<br>
+        PLZ Ort<br>
+        E-Mail: name@example.com
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Stand: 01.10.2026 · Stempelbox für Android</p>
+  </footer>
+
+</div>
+</body>
+</html>
